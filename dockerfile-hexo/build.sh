@@ -1,4 +1,3 @@
-git clone git@github.com:yangyhua/blog.git
+#git clone git@github.com:yangyhua/blog.git
 docker pull node:lts
-docker build -t hexo:$(date "+%y.%m.%d") -f hexo.dockerfile --no-cache .
-rm -rf blog
+docker build --build-arg SSH_PRIVATE_KEY="$(cat ~/.ssh/id_rsa)" -t hexo:$(date "+%y.%m.%d") -f hexo.dockerfile --no-cache .
